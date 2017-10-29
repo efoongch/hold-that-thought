@@ -114,13 +114,13 @@
      */
     function updateSigninStatus(isSignedIn) {
       if (isSignedIn) {
-        var signInCheck= document.getElementById('gmailCheck');
-        var signedInContent = document.createTextNode("we are signed in" + '\n');
-        gmailCheck.appendChild(signedInContent)
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
         listLabels();
       } else {
+        var signInCheck= document.getElementById('gmailCheck');
+        var signedInContent = document.createTextNode("we are not signed in" + '\n');
+        signInCheck.appendChild(signedInContent);
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
       }
