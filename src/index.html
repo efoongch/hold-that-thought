@@ -81,7 +81,6 @@
      */
     function handleClientLoad() {
       gapi.load('client:auth2', initClient);
-
     }
 
     /**
@@ -94,6 +93,9 @@
         clientId: CLIENT_ID,
         scope: SCOPES
       }).then(function () {
+        var gmailCheck = document.getElementById('gmailCheck');
+        var gmailCheckContent = document.createTextNode("the client ID works" + '\n');
+        gmailCheck.appendChild(gmailCheckContent);
         // Listen for sign-in state changes.
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
         
@@ -118,9 +120,6 @@
         signoutButton.style.display = 'block';
         listLabels();
       } else {
-        var signInCheck= document.getElementById('gmailCheck');
-        var signedInContent = document.createTextNode("we are not signed in" + '\n');
-        signInCheck.appendChild(signedInContent);
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
       }
