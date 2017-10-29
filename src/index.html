@@ -104,9 +104,6 @@
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         authorizeButton.onclick = handleAuthClick;
         signoutButton.onclick = handleSignoutClick;
-        var gmailCheck = document.getElementById('gmailCheck');
-        var gmailCheckContent = document.createTextNode("gmail has been queried" + '\n');
-        gmailCheck.appendChild(gmailCheckContent)
       });
     }
 
