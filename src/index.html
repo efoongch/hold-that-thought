@@ -96,14 +96,15 @@
       }).then(function () {
         // Listen for sign-in state changes.
         gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-        var gmailCheck = document.getElementById('gmailCheck');
-        var gmailCheckContent = document.createTextNode("gmail has been queried" + '\n');
-        gmailCheck.appendChild(gmailCheckContent)
+        
 
         // Handle the initial sign-in state.
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
         authorizeButton.onclick = handleAuthClick;
         signoutButton.onclick = handleSignoutClick;
+        var gmailCheck = document.getElementById('gmailCheck');
+        var gmailCheckContent = document.createTextNode("gmail has been queried" + '\n');
+        gmailCheck.appendChild(gmailCheckContent)
       });
     }
 
@@ -113,6 +114,9 @@
      */
     function updateSigninStatus(isSignedIn) {
       if (isSignedIn) {
+        var signInCheck= document.getElementById('gmailCheck');
+        var signedInContent = document.createTextNode("we are signed in" + '\n');
+        gmailCheck.appendChild(signedInContent)
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
         listLabels();
