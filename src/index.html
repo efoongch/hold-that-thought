@@ -172,6 +172,19 @@
       })
     };
 
+    function revealHost() {
+      var host = window.location.host;
+      var hostURL = window.location.protocol + "//" + window.location.hostname + window.location.pathname + window.location.port;
+      var hostname = window.location.hostname;
+      var hostpre = document.getElementById('hostname');
+      var hostContent = document.createTextNode(host + '\n');
+      var hostURLContent = document.createTextNode(hostURL + '\n');
+      var hostnameContent = document.createTextNode(hostname + '\n');
+      hostpre.appendChild(hostContent);
+      hostpre.appendChild(hostnameContent);
+      hostpre.appendChild(hostURLContent);
+    };
+
   </script>
 
   <script async defer src="https://apis.google.com/js/api.js"
