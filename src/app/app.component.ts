@@ -2,12 +2,19 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+//import { Data } from './providers/data/data';
+//import { Injectable } from '@angular/core';
+import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ContactPage } from '../pages/contact/contact';
+import { AboutPage } from '../pages/about/about';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  // providers: [Data]
 })
+
+
 export class MyApp {
   rootPage:any = TabsPage;
 
